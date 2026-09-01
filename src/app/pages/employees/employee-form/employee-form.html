@@ -1,0 +1,74 @@
+<div class="container">
+
+  <h1>
+    {{ isEditMode ? 'Edit Employee' : 'Add Employee' }}
+  </h1>
+
+  <form (ngSubmit)="saveEmployee()">
+
+    <div class="form-group">
+
+      <label>Name</label>
+
+      <input
+        type="text"
+        name="name"
+        [(ngModel)]="employee.name"
+        required
+      />
+
+    </div>
+
+    <div class="form-group">
+
+      <label>Email</label>
+
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="employee.email"
+        required
+      />
+
+    </div>
+
+    <div class="form-group">
+
+      <label>Department</label>
+
+      <input
+        type="text"
+        name="department"
+        [(ngModel)]="employee.department"
+        required
+      />
+
+    </div>
+
+    <div class="form-group">
+
+      <label>Salary</label>
+
+      <input
+        type="number"
+        name="salary"
+        [(ngModel)]="employee.salary"
+        required
+      />
+
+    </div>
+
+    <button type="submit" class="save-btn">
+      {{ isEditMode ? 'Update' : 'Save' }}
+    </button>
+
+    <button
+      type="button"
+      class="cancel-btn"
+      (click)="cancel()">
+      Cancel
+    </button>
+
+  </form>
+
+</div>

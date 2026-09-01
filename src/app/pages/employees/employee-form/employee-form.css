@@ -1,0 +1,43 @@
+.container {
+  width: 500px;
+  margin: 40px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-btn {
+  background: #1976d2;
+  color: white;
+  margin-right: 10px;
+}
+
+.cancel-btn {
+  background: #777;
+  color: white;
+}
