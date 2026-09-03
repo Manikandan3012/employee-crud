@@ -9,7 +9,7 @@ import { Employee } from '../models/employee';
 })
 export class EmployeeService {
 
-  private apiUrl = 'http://localhost:5000/api/employees';
+private apiUrl = 'https://emp-backend-gceta7b8dxerbuem.centralindia-01.azurewebsites.net/api/employees';
 
   constructor(private http: HttpClient) {}
 
