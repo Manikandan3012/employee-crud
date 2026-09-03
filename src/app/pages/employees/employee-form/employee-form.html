@@ -1,71 +1,108 @@
-<div class="container">
+<div class="employee-form">
 
-  <h1>
+  <h2>
     {{ isEditMode ? 'Edit Employee' : 'Add Employee' }}
-  </h1>
+  </h2>
 
-  <form (ngSubmit)="saveEmployee()">
+  <div *ngIf="loading()">
+    Loading employee...
+  </div>
 
-    <div class="form-group">
+  <form
+    *ngIf="!loading()"
+    (ngSubmit)="saveEmployee()"
+  >
 
+    <div>
+      <label>Id</label>
+
+      <input
+        type="number"
+        [ngModel]="employee().id"
+        (ngModelChange)="employee.set({
+          ...employee(),
+          id: $event
+        })"
+        name="id"
+        [disabled]="isEditMode"
+      />
+    </div>
+
+
+    <div>
       <label>Name</label>
 
       <input
         type="text"
+        [ngModel]="employee().name"
+        (ngModelChange)="employee.set({
+          ...employee(),
+          name: $event
+        })"
         name="name"
-        [(ngModel)]="employee.name"
         required
       />
-
     </div>
 
-    <div class="form-group">
 
+    <div>
       <label>Email</label>
 
       <input
         type="email"
+        [ngModel]="employee().email"
+        (ngModelChange)="employee.set({
+          ...employee(),
+          email: $event
+        })"
         name="email"
-        [(ngModel)]="employee.email"
         required
       />
-
     </div>
 
-    <div class="form-group">
 
+    <div>
       <label>Department</label>
 
       <input
         type="text"
+        [ngModel]="employee().department"
+        (ngModelChange)="employee.set({
+          ...employee(),
+          department: $event
+        })"
         name="department"
-        [(ngModel)]="employee.department"
         required
       />
-
     </div>
 
-    <div class="form-group">
 
+    <div>
       <label>Salary</label>
 
       <input
         type="number"
+        [ngModel]="employee().salary"
+        (ngModelChange)="employee.set({
+          ...employee(),
+          salary: $event
+        })"
         name="salary"
-        [(ngModel)]="employee.salary"
         required
       />
-
     </div>
 
-    <button type="submit" class="save-btn">
-      {{ isEditMode ? 'Update' : 'Save' }}
+
+    <br>
+
+    <button type="submit">
+      {{ isEditMode ? 'Update Employee' : 'Add Employee' }}
     </button>
 
     <button
       type="button"
-      class="cancel-btn"
-      (click)="cancel()">
+      (click)="cancel()"
+    >
       Cancel
     </button>
 
